@@ -30,7 +30,8 @@ DEFINE_SPINLOCK(path_spinlock);
 
 /* Full list of signals that we react to. Complete if necessary. */
 #define KMNOT_SIGMASK						\
-	(sigmask(SIGKILL) | sigmask(SIGINT) | sigmask(SIGTERM))
+	(sigmask(SIGKILL) | sigmask(SIGINT) | sigmask(SIGTERM)	\
+	 sigmask(SIGSTOP) | sigmask(SIGHUP))
 static sigset_t kmnot_sigset;
 
 /* Forward declarations */
