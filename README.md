@@ -1,4 +1,4 @@
-This is an excercise in Linux kernel security programming. The goal is to restrict or prohibit completely forceful
+This is an excercise in Linux kernel security programming. The goal is to restrict or prohibit forceful
 process termination.
 
 This is just a first approximation that proves the principle. The code works fine, but there's so much room for improvement.
@@ -9,14 +9,13 @@ sleep deprivation at the same time. Duh!
 
 So, kill me? Kill me not? It's a game! Shall we?
 I assume that you have Linux kernel sources installed.
-
 ```
 make
-insmod ./killmenot.ko proglist=/full/path/one,/full/path/two
+insmod ./killmenot.ko proglist=/full/path/name_one,/full/path/name_two
 ```
 
 Up to 16 programs may be specified.
-Use `readlink -f /full/path/one` to get the actual program name if it's a symlink.
+Use `readlink -f /full/path/name` to get the actual program name if it's a symlink.
 
 Start one of the specified programs. It's better if those are daemons. For instance, if you have Nginx installed like I do, the program to give to the module as an argument is `/usr/sbin/nginx`.
 
