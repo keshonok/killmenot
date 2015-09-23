@@ -22,4 +22,4 @@ Start one of the specified programs. It's better if those are daemons. For insta
 Start Nginx with a simple `sudo service nginx start`.
 Then try to `kill -9 <PID of Nginx process>`.
 
-See the process table with `ps ax`. See that Nginx is still there. See what's happened in `/var/log/syslog` or wherever your system logs kernel messages are.
+See the process table with `ps ax`. See that Nginx is still there. See what's happened in `/var/log/syslog` or wherever your system logs kernel messages.
