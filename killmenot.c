@@ -89,7 +89,7 @@ int kmnot_task_kill(struct task_struct *task,
 	struct mm_struct *mm = task->mm;
 
 	kmnot_debug("%s: pid=%d, path=\"%s\", sig=%d\n",
-		   __FUNCTION__, task->pid, task->comm, sig);
+		   __func__, task->pid, task->comm, sig);
 
 	/*
 	 * Protect filling and accessing of 'path_buf'. Actually, this appears
@@ -102,7 +102,7 @@ int kmnot_task_kill(struct task_struct *task,
 		 */
 		path = d_path(&mm->exe_file->f_path, path_buf, PATH_MAX);
 	}
-	kmnot_debug("%s: path=\"%s\"\n", __FUNCTION__, path);
+	kmnot_debug("%s: path=\"%s\"\n", __func__, path);
 
 	for (i = 0; i < proglist_len; i++) {
 		if (!strcmp(path, proglist[i])) {
